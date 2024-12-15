@@ -1,0 +1,20 @@
+#-------------mini project-------------------
+#------------otp generator-----------------
+
+import random
+
+def generate_otp():
+    # user  10-digit input
+    user_input = input("Enter a 10-digit number: ")
+    
+    
+    if len(user_input) == 10 and user_input.isdigit():
+        # Generate a 4-digit OTP using the user input as seed
+        random.seed(user_input)  # Using the 10-digit input as the seed
+        otp = random.randint(0, 9999)  # Generate a 4-digit OTP
+        print(f"Your OTP is: {otp}")
+    else:
+        print("Invalid input! Please enter a valid 10-digit number.")
+
+# Call the function
+generate_otp()
